@@ -27,8 +27,8 @@ Board Container
 *******************/
 
 .container {
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   border: 1px solid black;
   margin-top: 50px;
   padding: 30px;
@@ -42,8 +42,8 @@ Board
 
 .board {
   margin: 0 auto;
-  width: 800px;
-  height: 500px;
+  max-width: 70%;
+  min-height: 500px;
   border: 1px solid black;
   position: relative;
 }
@@ -56,8 +56,8 @@ Dashboard
 
 .dashboard:nth-child(odd) {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: -1px;
   border: 1px solid black;
   width: 50%;
   height: 75px;
@@ -65,22 +65,57 @@ Dashboard
 
 .dashboard:nth-child(even) {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -1px;
+  right: -1px;
   border: 1px solid red;
   width: 50%;
   height: 75px;
-  text-align: right;
 }
 
-.money {
-  display: inline;
+.stats {
+  font-size: 1.3em;
 }
 
-.military {
-  display: inline;
+.player {
+  font-size: 3.2em;
 }
 
+.player-1 .player {
+  margin-left: 5px;
+}
+
+.player-2 .player {
+  float: right;
+  margin-left: 30px;
+  margin-right: 5px;
+}
+
+.player-1 .stats {
+  margin-left: 60px;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.player-2 .stats {
+  margin-left: 60px;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+
+
+/*******************
+Clearfix
+*******************/
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
 
 
 
