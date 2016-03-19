@@ -1,0 +1,94 @@
+/*******************
+Base
+*******************/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*******************
+Title
+*******************/
+
+.game-title {
+  font-size: 3em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+
+/*******************
+Board Container
+*******************/
+
+.container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  margin-top: 50px;
+  padding: 30px;
+}
+
+
+
+/*******************
+Board
+*******************/
+
+.board {
+  margin: 0 auto;
+  width: 800px;
+  height: 500px;
+  border: 1px solid black;
+  position: relative;
+}
+
+
+
+/*******************
+Dashboard
+*******************/
+
+.dashboard:nth-child(odd) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+  width: 50%;
+  height: 75px;
+}
+
+.dashboard:nth-child(even) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 1px solid red;
+  width: 50%;
+  height: 75px;
+  text-align: right;
+}
+
+.money {
+  display: inline;
+}
+
+.military {
+  display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
