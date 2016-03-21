@@ -110,24 +110,3 @@ p2AssetData.forEach(function(item) {
 
 $p2Assets.prepend($p2Ul);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
