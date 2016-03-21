@@ -2,7 +2,7 @@
 
 'The Pillars of Civilization' is a turn based strategy game, that plays for 20 turns and allows you to make **decisions** that can have a huge impact on who wins. 
 
-You start by selecting the path you want to take your civilization down. Your choice of paths are military, scientific, economic.
+You start by selecting the path you want to take your civilization down. Your choice of paths are military, or economic.
 
 ##Paths
 
