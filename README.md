@@ -1,17 +1,16 @@
 # The Pillars of Civilization
 
-'The Pillars of Civilization' is a turn based strategy game, that plays for 20 turns and allows you to make **decisions** that can have a huge impact on who wins. 
+'The Pillars of Civilization' is a turn based strategy game, that plays for 15 turns and allows you to make **decisions** that can have a huge impact on who wins. 
 
 You start by selecting the path you want to take your civilization down. Your choice of paths are military, or economic.
 
 ##Paths
 
 #### Military
-The military path will give your civilization a strong military. The military civilization will win by nuking the opponenet.
+The military path will give your civilization a strong military. Your units do more damage and you will start off with double the units.
 
 #### Economic
-The economic civilization will generate more money per turn. The economic civilization will win by buying the planet. 
-
+The Economic path will generate more gold for your civilization. You will make more gold per turn and start off with double the gold. 
 
 ##Decisions
 After the first few turns, you will be able to make your first decision. You defeat your opponenet by making better decisions. 
@@ -19,7 +18,7 @@ After the first few turns, you will be able to make your first decision. You def
 #### Decision #1
 ***Invest In Education*** - This decision will take your opponents population from the empire (200 citizens) and move them to your empire (all 250) for 5 turns.
 
-* Steal Opponent's Tanks - Or you can choose to take away your opponents tanks and add them to your inventory, reducing your opponents total unit damage and increasing yours.
+***Steal Opponent's Tanks*** - Or you can choose to take away your opponents tanks and add them to your inventory, reducing your opponents total unit damage and increasing yours.
 
 #### Decision #2
 ***Build Roads*** - Create jobs and take away your opponents citizens! This decision will increase your gold per turn for five turns, add 100 citizens to your total population and take 500 gold away from your opponents total cash and deposit it into your total cash.
