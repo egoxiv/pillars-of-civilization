@@ -16,7 +16,7 @@ The Economic path will generate more gold for your civilization. You will make m
 After the first few turns, you will be able to make your first decision. You defeat your opponenet by making better decisions. 
 
 #### Decision #1
-***Invest In Education*** - This decision will take your opponents population from the empire (200 citizens) and move them to your empire (all 250) for 5 turns.
+***Invest In Education*** - This decision will take your opponents population from the empire (200 citizens) and move them to your empire (all 200) for 5 turns.
 
 ***Steal Opponent's Tanks*** - Or you can choose to take away your opponents tanks and add them to your inventory, reducing your opponents total unit damage and increasing yours.
 
