@@ -10,10 +10,6 @@ You start by selecting the path you want to take your civilization down. Your ch
 
 The military path will give your civilization a strong military. The military civilization will win by nuking the opponenet.
 
-###Scientific
-
-The scientific path will give your civilization access to special technology. The scientific civilization will win by leaving the planet and the opponent behind. 
-
 ###Economic
 
 The economic civilization will generate more money per turn. The economic civilization will win by buying the planet. 
