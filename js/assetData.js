@@ -55,3 +55,4 @@ p1Dashboard.children('.military').text( Economy.totalUnits() );
 // Player 2 dashboard
 p2Dashboard.children('.money').text(Military.money);
 p2Dashboard.children('.military').text( Military.totalUnits() );
+
