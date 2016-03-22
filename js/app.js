@@ -117,18 +117,22 @@ var nextTurn = function(player1, player2) {
     overlay(decisions[0].decisionA, decisions[0].decisionADescription, decisions[0].decisionB, decisions[0].decisionBDescription);
   } else if( turn === 6 ) {
     console.log('Third decision goes here');
+    window.alert('Second decision!');
+    overlay(decisions[1].decisionA, decisions[1].decisionADescription, decisions[1].decisionB, decisions[1].decisionBDescription);
   } else if ( turn === 9 ) {
     console.log('Third decision goes here');
+    window.alert('First decision!');
+    overlay(decisions[2].decisionA, decisions[2].decisionADescription, decisions[2].decisionB, decisions[2].decisionBDescription);
   } else if ( turn === 12 ) {
     console.log('Fourth decision goes here');
+    window.alert('First decision!');
+    overlay(decisions[3].decisionA, decisions[3].decisionADescription, decisions[3].decisionB, decisions[3].decisionBDescription);
   } else {
     console.log(turn);
   }
 
   Military.money += Military.moneyPerTurn();
   Economy.money += Economy.moneyPerTurn();
-
-
 
 };
 
