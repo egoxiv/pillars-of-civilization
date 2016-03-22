@@ -1,3 +1,5 @@
+// Not linked!
+
 var $p1Ul = $('<ul id=\'asset-list\'></ul>');
 var $p1Assets = $('.player1-assets');
 
