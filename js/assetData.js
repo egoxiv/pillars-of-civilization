@@ -19,7 +19,7 @@ p1AssetData.forEach(function(item) {
   $p1Ul.append($li);
 });
 
-$p1Assets.prepend($p1Ul);
+//$p1Assets.prepend($p1Ul); // Adds lis with static data
 
 // Player 2 asset data
 var p2AssetData = [
@@ -42,4 +42,16 @@ p2AssetData.forEach(function(item) {
   $p2Ul.append($li);
 });
 
-$p2Assets.prepend($p2Ul);
+// $p2Assets.prepend($p2Ul); // Adds lis with static data
+
+// Updates dashboard
+var p1Dashboard = $('.player-1');
+var p2Dashboard = $ ('.player-2');
+
+// Player 1 dashboard
+p1Dashboard.children('.money').text(Economy.money);
+p1Dashboard.children('.military').text( Economy.totalUnits() );
+
+// Player 2 dashboard
+p2Dashboard.children('.money').text(Military.money);
+p2Dashboard.children('.military').text( Military.totalUnits() );

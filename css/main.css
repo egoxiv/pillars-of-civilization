@@ -56,6 +56,16 @@ Board Container
 Board
 *******************/
 
+.turn-status {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ecf0f1;
+  font-size: 1.5em;
+}
+
 .board {
   margin: 0 auto;
   max-width: 60%;
@@ -89,10 +99,11 @@ Dashboard
   height: 75px;
   border-radius: 20px 0 0 0;
   background-color: white;
+  text-align: right;
 }
 
 .stats {
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 
 .player {
@@ -110,13 +121,13 @@ Dashboard
 }
 
 .player-1 .stats {
-  margin-left: 80px;
+  margin-left: 15px;
   display: inline-block;
   padding-top: 20px;
 }
 
 .player-2 .stats {
-  margin-left: 80px;
+  margin-right: 15px;
   display: inline-block;
   padding-top: 20px;
 }
@@ -175,11 +186,12 @@ Clearfix
 Buttons
 *******************/
 
-.next-turn {
+.next-turn,
+.start-button {
   width: 200px;
   height: 40px;
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
   font-size: 1.7em;
 }
 
@@ -193,11 +205,6 @@ Buttons
 Asset
 *******************/
 
-.player-assets {
-  display: inline-block;
-  position: absolute;
-}
-
 .player-assets ul {
   padding: 10px;
   width: 180px;
@@ -208,6 +215,7 @@ Asset
 }
 
 .player1-assets {
+  position: absolute;
   display: inline-block;
   float: left;
   left: 5px;
@@ -215,6 +223,7 @@ Asset
 }
 
 .player2-assets {
+  position: absolute;
   display: inline-block;
   float: right;
   right: 5px;

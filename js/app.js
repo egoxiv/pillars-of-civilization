@@ -1,3 +1,8 @@
+var player1Name,
+player2Name,
+turn = 0,
+$startButton = $('.start-button');
+
 var Military = {
   empire: 'British Empire',
   money: 10000,
@@ -21,7 +26,7 @@ var Military = {
     var jets = this.jetFighters * 40;
     return soldiers + tanks + frigates + jets;
   }
-  // units are cheaper for Military
+  // choices: [];
 };
 
 var Economy = {
@@ -35,7 +40,7 @@ var Economy = {
   bills: 0,
   moneyPerTurn: function() {
     // economy makes more money per turn
-    var total = Math.floor(this.population / 7);
+    var total = Math.floor(this.population / 6);
     return total;
   },
   totalUnits: function() {
@@ -50,29 +55,34 @@ var Economy = {
   }
 };
 
+var startGame = function() {
+  $startButton.hide();
 
-var units = [
-  {
-    type: 'soldier',
-    damage: 10,
-    price: 100
-  },
-  {
-    type: 'tank',
-    damage: 30,
-    price: 500
-  },
-  {
-    type: 'frigate',
-    damage: 70,
-    price: 1000
-  },
-  {
-    type: 'jet fighter',
-    damage: 100,
-    price: 5000
-  }
-];
+  player1Name = prompt('Player 1 enter your first name');
+  player2Name = prompt('Player 2 enter your first name');
+
+  var $turnStatus = $('.turn-status');
+  $turnStatus.append(turn);
+
+  $('.player-1 .player').text(player1Name);
+  $('.player-2 .player').text(player2Name);
+
+  // Adds click event to NEXT button
+  $('.next-turn').on('click', function() {
+    nextTurn(player1Name, player2Name);
+  });
+};
+
+var nextTurn = function(player1, player2) {
+  turn++;
+
+
+
+  Military.money += Military.moneyPerTurn();
+  Economy.money += Economy.moneyPerTurn();
+
+};
+
 
 
 
