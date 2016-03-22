@@ -248,6 +248,22 @@ Overlay
   position: absolute;
   top:0;
   left:0;
-  text-align: center;
+  /*text-align: center;*/
   color: #ecf0f1;
 }
+
+#left-div {
+  text-align: left;
+  width: 40%;
+  border: 1px solid black;
+}
+
+#right-div {
+  text-align: right;
+  width: 40%;
+}
+
+
+
+
+
