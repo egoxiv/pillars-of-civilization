@@ -71,6 +71,10 @@ var startGame = function() {
 };
 
 var nextTurn = function(player1, player2) {
+  var $turnStatus = $('.turn-status');
+  turn++;
+  $turnStatus.text(turn);
+
   // Updates dashboard
   var p1Dashboard = $('.player-1');
   var p2Dashboard = $ ('.player-2');
@@ -82,7 +86,6 @@ var nextTurn = function(player1, player2) {
   // Player 2 dashboard
   p2Dashboard.children('.money').text(Military.money);
   p2Dashboard.children('.military').text( Military.totalUnits() );
-
 
   // Player 1 data setters
   $('.player1-assets #empire').text( Economy.empire );
@@ -106,12 +109,12 @@ var nextTurn = function(player1, player2) {
   $('.player2-assets #cashPerTurn').text( Military.moneyPerTurn() );
   $('.player2-assets #bill').text( Military.bills );
 
-  var $turnStatus = $('.turn-status');
-  turn++;
-  $turnStatus.text(turn);
+
 
   if( turn === 3 ) {
     console.log('First decision happens here');
+    window.alert('First decision!');
+    overlay(decisions[0].decisionA, decisions[0].decisionADescription, decisions[0].decisionB, decisions[0].decisionBDescription);
   } else if( turn === 6 ) {
     console.log('Third decision goes here');
   } else if ( turn === 9 ) {
