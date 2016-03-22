@@ -2,8 +2,14 @@ var decisions = [
   {
     decisionA: 'Invest In Education',
     decisionADescription: 'This decision will take your opponents population from the empire (200 citizens) and move them to your empire (all 200) for 5 turns.',
+    actionA: function() {
+      // ruin opponents day here
+    },
     decisionB: 'Steal Opponent\'s Tanks',
-    decisionBDescription: 'Or you can choose to take away your opponents tanks and add them to your inventory, reducing your opponents total unit damage and increasing yours.'
+    decisionBDescription: 'Or you can choose to take away your opponents tanks and add them to your inventory, reducing your opponents total unit damage and increasing yours.',
+    actionB: function() {
+      // ruin opponents day here
+    }
   },
   {
     decisionA: 'Build Roads',
@@ -25,6 +31,10 @@ var decisions = [
     decisionBDescription: 'Steal 20 of your opponents jets, taking the unit that does the most damage away from your opponent and add it to your total jets increasing your total unit damage significantly.'
   }
 ];
+
+var getDecision = function(index) {
+
+};
 
 
 
