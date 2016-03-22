@@ -109,8 +109,6 @@ var nextTurn = function(player1, player2) {
   $('.player2-assets #cashPerTurn').text( Military.moneyPerTurn() );
   $('.player2-assets #bill').text( Military.bills );
 
-
-
   if( turn === 3 ) {
     console.log('First decision happens here');
     window.alert('First decision!');
@@ -121,13 +119,16 @@ var nextTurn = function(player1, player2) {
     overlay(decisions[1].decisionA, decisions[1].decisionADescription, decisions[1].decisionB, decisions[1].decisionBDescription);
   } else if ( turn === 9 ) {
     console.log('Third decision goes here');
-    window.alert('First decision!');
+    window.alert('Third decision!');
     overlay(decisions[2].decisionA, decisions[2].decisionADescription, decisions[2].decisionB, decisions[2].decisionBDescription);
   } else if ( turn === 12 ) {
     console.log('Fourth decision goes here');
-    window.alert('First decision!');
+    window.alert('Last decision!');
     overlay(decisions[3].decisionA, decisions[3].decisionADescription, decisions[3].decisionB, decisions[3].decisionBDescription);
-  } else {
+  } else if( turn > 15 ) {
+    window.alert('Game is over!');
+    return;
+  }else {
     console.log(turn);
   }
 
