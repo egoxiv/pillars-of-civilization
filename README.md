@@ -35,3 +35,10 @@ After the first few turns, you will be able to make your first decision. You def
 
 ***Steal Opponents jets*** - Steal 20 of your opponents jets, taking the unit that does the most damage away from your opponent and add it to your total jets increasing your total unit damage significantly.
 
+## How to Win 
+The player with a higher total of money and military wins.
+
+***If the Military civilization wins*** - The military civilization will nuke his opponent and rule the world
+
+***If the Economy civilization wins*** - The economy civilization will buy his opponent and rule the world
+
