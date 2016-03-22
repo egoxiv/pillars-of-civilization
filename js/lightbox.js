@@ -1,27 +1,47 @@
 var overlay = function(heading, description, heading2, description2) {
 
-var $overlay      = $( "<div id='overlay'></div>" ),
-    $headerShell  = $("<input type=\'checkbox\'><h2>" + heading + "</h2>"),
-    $header2      = $("<input type=\'checkbox\'><h2>" + heading2 + "</h2>"),
-    $captionShell = $( "<p>" + description + "</p>" ),
-    $caption2     = $( "<p>" + description2 + "</p>" ),
-    $submit       = $("<input type=\'submit\' value=\'Submit\'>");
+  var choice;
 
+  var $overlay = $( '<div id=\'overlay\'></div>' );
+  var $leftDiv  = $( '<div id=\'pull-left\'></div>' );
+  var $rightDiv  = $( '<div id=\'pull-right\'></div>' );
 
-$overlay.append( $headerShell );
-$overlay.append( $captionShell );
+  // First choice
+  var $heading1 = $('<h2 id=\'heading\'>' + heading + '</h2>');
+  var $description1 = $('<p id=\'description\'>' + description + '</p>');
+  $leftDiv.append($heading1);
+  $leftDiv.append($description1);
 
-$overlay.append( $header2 );
-$overlay.append( $caption2 );
-$overlay.append($submit);
+  // Second Choice
+  var $heading2 = $('<h2 id=\'heading2\'>' + heading2 + '</h2>');
+  var $description2 = $('<p id=\'description2\'>' + description2 + '</p>');
+  $rightDiv.append($heading2);
+  $rightDiv.append($description2);
 
+  // Add choices to overlay
+  $overlay.append($leftDiv);
+  $overlay.append($rightDiv);
 
-$( "body" ).append( $overlay );
+  // Adds click event to headings to remove overlay
+  $heading1.on('click', function() {
+    choice = this;
+    console.log(choice);
+    $( $overlay ).click( function() {
+      $overlay.hide();
+    });
+  });
 
-$overlay.show();
+  $heading2.on('click', function() {
+    choice = this;
+    console.log(choice);
 
-// $( $overlay ).click( function() {
-//   $overlay.hide();
-// });
+    $( $overlay ).click( function() {
+      $overlay.hide();
+    });
+  });
+
+  $( "body" ).append( $overlay );
+
+  $overlay.show();
 
 };
