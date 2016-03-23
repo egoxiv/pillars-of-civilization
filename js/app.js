@@ -62,9 +62,6 @@ var nextTurn = function(player1, player2) {
     window.alert('First decision!');
     // overlay( counter );
     getContext(counter, Player1, Player2);
-    // get context for each player here and call overlay(counter) in that function
-    // getContext(counter, Player1, Player2) <-- something like that? getContext(index, player, opponent) <-- params
-    // getContext(counter, Player2, Player1) <-- something like that? getContext(index, player, opponent) <-- params
   } else if( turn === 6 ) {
     window.alert('Second decision!');
     counter++;
@@ -80,6 +77,17 @@ var nextTurn = function(player1, player2) {
     counter++;
     // overlay( counter );
     getContext(counter, Player1, Player2);
+  } else if(turn === 15) {
+    var winner;
+    var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
+    var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
+    if(p1FinalTotal > p2FinalTotal) {
+      console.log('Player 1: ' + p1FinalTotal);
+      window.alert(Player1.empire + ' wins!');
+    } else {
+      console.log('Player 2: ' + p2FinalTotal);
+      window.alert(Player2.empire + ' wins!');
+    }
   } else if( turn > 15 ) {
     window.alert('Game is over!');
     return;
