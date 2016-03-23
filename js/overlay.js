@@ -20,16 +20,20 @@ var overlay = function(index, player) {
 
   $( "body" ).append( $overlay );
 
-
   $button1.text(decisions[index].headline1);
-  $($button1).on('click', function() {
+  $button1.on('click', function() {
     player.choice = decisions[index].actionA;
+    // BUG when we invoke player.choice()
+    // can't read property population of undefined.
+    // undefined SHOULD be the opponent
+    player.choice();
     $overlay.hide();
   });
 
   $button2.text(decisions[index].headline2);
-  $($button2).on('click', function() {
+  $button2.on('click', function() {
     player.choice = decisions[index].actionB;
+    player.choice();
     $overlay.hide();
   });
 
