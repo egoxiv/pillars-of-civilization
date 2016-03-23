@@ -60,22 +60,26 @@ var nextTurn = function(player1, player2) {
 
   if( turn === 3 ) {
     window.alert('First decision!');
-    overlay( counter );
+    // overlay( counter );
+    getContext(counter, Player1, Player2);
     // get context for each player here and call overlay(counter) in that function
-    // getContext(Player1, Player2) <-- something like that? getContext(player, opponent) <-- params
-    // getContext(Player2, Player1) <-- something like that? getContext(player, opponent) <-- params
+    // getContext(counter, Player1, Player2) <-- something like that? getContext(index, player, opponent) <-- params
+    // getContext(counter, Player2, Player1) <-- something like that? getContext(index, player, opponent) <-- params
   } else if( turn === 6 ) {
     window.alert('Second decision!');
     counter++;
-    overlay( counter );
+    // overlay( counter );
+    getContext(counter, Player1, Player2);
   } else if ( turn === 9 ) {
     window.alert('Third decision!');
     counter++;
-    overlay( counter );
+    // overlay( counter );
+    getContext(counter, Player1, Player2);
   } else if ( turn === 12 ) {
     window.alert('Last decision!');
     counter++;
-    overlay( counter );
+    // overlay( counter );
+    getContext(counter, Player1, Player2);
   } else if( turn > 15 ) {
     window.alert('Game is over!');
     return;
