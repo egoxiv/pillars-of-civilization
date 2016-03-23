@@ -4,8 +4,4 @@ var getContext = function(index, player, opponent) {
   overlay(index, opponent);
 
   index++;
-
-
-  // console.log(player);
-  // console.log(opponent);
 };
