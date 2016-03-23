@@ -1,14 +1,17 @@
-var player1Name,
-player2Name,
-turn = 0,
-counter = 0, // counter for decisions array
-$startButton = $('.start-button');
+var player1Name;
+var player2Name;
+var counter      = 0; // counter for decisions array
+var turn         = 0;
+var $startButton = $('.start-button');
 
 var startGame = function() {
   $startButton.hide();
 
-  player1Name = prompt('Player 1 enter your first name');
-  player2Name = prompt('Player 2 enter your first name');
+  // player1Name = prompt('Player 1 enter your first name');
+  // player2Name = prompt('Player 2 enter your first name');
+
+  player1Name = 'America';
+  player2Name = 'Britain';
 
   $('.player-1 .player').text(player1Name);
   $('.player-2 .player').text(player2Name);
@@ -78,7 +81,6 @@ var nextTurn = function(player1, player2) {
     // overlay( counter );
     getContext(counter, Player1, Player2);
   } else if(turn === 15) {
-    var winner;
     var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
     var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
     if(p1FinalTotal > p2FinalTotal) {
@@ -99,7 +101,3 @@ var nextTurn = function(player1, player2) {
   Player1.money += Player1.moneyPerTurn();
 
 };
-
-
-
-
