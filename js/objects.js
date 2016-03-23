@@ -8,9 +8,8 @@ var Player1 = {
   jetFighters: 50,
   bills: 0,
   damageMultiplier: 50,
-  moneyDivider: 6,
+  moneyDivider: 5,
   moneyPerTurn: function() {
-    // economy makes more money per turn
     var total = Math.floor(this.population / this.moneyDivider);
     return total;
   },
@@ -52,3 +51,7 @@ var Player2 = {
     return soldiers + tanks + frigates + jets;
   }
 };
+
+// setting up an association
+Player1.opponent = Player2;
+Player2.opponent = Player1;
