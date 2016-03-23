@@ -64,20 +64,19 @@ var decisions = [
   }
 ];
 
-Player1.choices = decisions;
-Player2.choices = decisions;
+// Player1.choices = decisions;
+// Player2.choices = decisions;
 
-var overlay = function(index) {
-  console.log(index);
-
+var overlay = function(index, player) {
   var $overlay     = $('<div id=\'overlay\'></div>');
+  var $empire      = $('<h1>' + player.empire + '</h1>');
   var headline1    = $('<h3>' + decisions[index].headline1 + '</h3>');
   var description1 = $('<p>' + decisions[index].description1 + '</p>');
   var $button1     = $('<button id="button1"></button');
 
   $button1.text(decisions[index].headline1);
   $($button1).on('click', function() {
-    decisions[index].actionA();
+    player.choice = decisions[index].actionA;
     $overlay.hide();
   });
 
@@ -87,10 +86,11 @@ var overlay = function(index) {
 
   $button2.text(decisions[index].headline2);
   $($button2).on('click', function() {
-    decisions[index].actionB();
+    player.choice = decisions[index].actionB;
     $overlay.hide();
   });
 
+  $overlay.append($empire);
   $overlay.append(headline1);
   $overlay.append(description1);
   $overlay.append($button1);
