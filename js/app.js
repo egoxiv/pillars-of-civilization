@@ -29,38 +29,41 @@ var nextTurn = function(player1, player2) {
   var p2Dashboard = $ ('.player-2');
 
   // Player 1 dashboard
-  p1Dashboard.children('.money').text(Economy.money);
-  p1Dashboard.children('.military').text( Economy.totalUnits() );
+  p1Dashboard.children('.money').text(Player1.money);
+  p1Dashboard.children('.military').text( Player1.totalUnits() );
 
   // Player 2 dashboard
-  p2Dashboard.children('.money').text(Military.money);
-  p2Dashboard.children('.military').text( Military.totalUnits() );
+  p2Dashboard.children('.money').text(Player2.money);
+  p2Dashboard.children('.military').text( Player2.totalUnits() );
 
   // Player 1 data setters
-  $('.player1-assets #empire').text( Economy.empire );
-  $('.player1-assets #money').text( Economy.money );
-  $('.player1-assets #population').text( Economy.population );
-  $('.player1-assets #soldiers').text( Economy.soldiers );
-  $('.player1-assets #tanks').text( Economy.tanks );
-  $('.player1-assets #frigates').text( Economy.frigates );
-  $('.player1-assets #jets').text( Economy.jetFighters );
-  $('.player1-assets #cashPerTurn').text( Economy.moneyPerTurn() );
-  $('.player1-assets #bill').text( Economy.bills );
+  $('.player1-assets #empire').text( Player1.empire );
+  $('.player1-assets #money').text( Player1.money );
+  $('.player1-assets #population').text( Player1.population );
+  $('.player1-assets #soldiers').text( Player1.soldiers );
+  $('.player1-assets #tanks').text( Player1.tanks );
+  $('.player1-assets #frigates').text( Player1.frigates );
+  $('.player1-assets #jets').text( Player1.jetFighters );
+  $('.player1-assets #cashPerTurn').text( Player1.moneyPerTurn() );
+  $('.player1-assets #bill').text( Player1.bills );
 
   // Player 2 data setters
-  $('.player2-assets #empire').text( Military.empire );
-  $('.player2-assets #money').text( Military.money );
-  $('.player2-assets #population').text( Military.population );
-  $('.player2-assets #soldiers').text( Military.soldiers );
-  $('.player2-assets #tanks').text( Military.tanks );
-  $('.player2-assets #frigates').text( Military.frigates );
-  $('.player2-assets #jets').text( Military.jetFighters );
-  $('.player2-assets #cashPerTurn').text( Military.moneyPerTurn() );
-  $('.player2-assets #bill').text( Military.bills );
+  $('.player2-assets #empire').text( Player2.empire );
+  $('.player2-assets #money').text( Player2.money );
+  $('.player2-assets #population').text( Player2.population );
+  $('.player2-assets #soldiers').text( Player2.soldiers );
+  $('.player2-assets #tanks').text( Player2.tanks );
+  $('.player2-assets #frigates').text( Player2.frigates );
+  $('.player2-assets #jets').text( Player2.jetFighters );
+  $('.player2-assets #cashPerTurn').text( Player2.moneyPerTurn() );
+  $('.player2-assets #bill').text( Player2.bills );
 
   if( turn === 3 ) {
     window.alert('First decision!');
     overlay( counter );
+    // get context for each player here and call overlay(counter) in that function
+    // getContext(Player1, Player2) <-- something like that? getContext(player, opponent) <-- params
+    // getContext(Player2, Player1) <-- something like that? getContext(player, opponent) <-- params
   } else if( turn === 6 ) {
     window.alert('Second decision!');
     counter++;
@@ -80,8 +83,8 @@ var nextTurn = function(player1, player2) {
     console.log(turn);
   }
 
-  Military.money += Military.moneyPerTurn();
-  Economy.money += Economy.moneyPerTurn();
+  Player2.money += Player2.moneyPerTurn();
+  Player1.money += Player1.moneyPerTurn();
 
 };
 
