@@ -1,7 +1,7 @@
 var decisions = [
   {
     headline1: 'Invest In Education',
-    description1: 'This decision will take your opponents population from the empire (200 citizens) and move them to your empire (all 200) for 5 turns.',
+    description1: 'This decision will take your opponents population from the empire (200 citizens) and move them to your empire.',
     actionA: function() {
       this.population = this.population + 200;
       this.opponent.population = this.opponent.population - 200;
@@ -47,7 +47,7 @@ var decisions = [
   },
   {
     headline1: 'Sanctions!',
-    description1: 'Sanction your opponent and charge him interest be reducing his gold per turn and sticking him with a 2000 bill. Get an automatic 2000 and make more gold per turn.',
+    description1: 'Sanction your opponent and charge him interest by reducing his gold per turn and sticking him with a 2000 bill. Get an automatic 2000 and make more gold per turn.',
     actionA: function() {
       this.money = this.money + 2000;
       this.moneyDivider = this.moneyDivider - 2;
@@ -57,7 +57,7 @@ var decisions = [
     headline2: 'Steal Military Base',
     description2: 'Sneak up on your opponent and steal half of his fighter jets and frigates.',
     actionB: function() {
-      var fighterJets = this.opponent.fighterJets /2;
+      var fighterJets = this.opponent.jetFighters /2;
       var frigates = this.opponent.frigates / 2;
 
       this.jetFighters = this.jetFighters + fighterJets;
