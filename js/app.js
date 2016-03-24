@@ -62,36 +62,42 @@ var nextTurn = function(player1, player2) {
   $('.player2-assets #cashPerTurn').text( Player2.moneyPerTurn() );
   $('.player2-assets #bill').text( Player2.bills );
 
-  if( turn === 3 ) {
-    window.alert('First decision!');
-    getContext(counter, Player1, Player2);
-  } else if( turn === 6 ) {
-    window.alert('Second decision!');
-    counter++;
-    getContext(counter, Player1, Player2);
-  } else if ( turn === 9 ) {
-    window.alert('Third decision!');
-    counter++;
-    getContext(counter, Player1, Player2);
-  } else if ( turn === 12 ) {
-    window.alert('Last decision!');
-    counter++;
-    getContext(counter, Player1, Player2);
-  } else if(turn === 15) {
-    var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
-    var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
-    if(p1FinalTotal > p2FinalTotal) {
-      window.alert(Player1.empire + ': ' + p1FinalTotal + '\n' + Player2.empire + ': ' + p2FinalTotal);
-      window.alert('Player 1 Wins!');
-    } else {
-      window.alert(Player2.empire + ': ' + p2FinalTotal + '\n' + Player1.empire + ': ' + p1FinalTotal);
-      window.alert('Player 2 Wins!');
-    }
-  } else if( turn > 15 ) {
-    window.alert('Game is over!');
-    return;
-  }else {
-    console.log(turn);
+  switch (turn) {
+    case 3:
+      window.alert('First decision!');
+      getContext(counter, Player1, Player2);
+      break;
+    case 6:
+      counter++;
+      window.alert('Second decision!');
+      getContext(counter, Player1, Player2);
+      break;
+    case 9:
+      counter++;
+      window.alert('Third decision!');
+      getContext(counter, Player1, Player2);
+      break;
+    case 12:
+      window.alert('Last decision!');
+      counter++;
+      getContext(counter, Player1, Player2);
+      break;
+    case 15:
+      var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
+      var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
+      if(p1FinalTotal > p2FinalTotal) {
+        window.alert(Player1.empire + ': ' + p1FinalTotal + '\n' + Player2.empire + ': ' + p2FinalTotal);
+        window.alert('Player 1 Wins!');
+      } else {
+        window.alert(Player2.empire + ': ' + p2FinalTotal + '\n' + Player1.empire + ': ' + p1FinalTotal);
+        window.alert('Player 2 Wins!');
+      }
+      break;
+    case 16:
+      window.alert('Game is over!');
+      break;
+    default:
+      console.log(turn);
   }
 
   Player2.money += Player2.moneyPerTurn();
