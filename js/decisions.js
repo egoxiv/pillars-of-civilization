@@ -34,28 +34,37 @@ var decisions = [
     description1: 'Make more gold per turn by adding 100 citizens, bill your opponent 1000 gold for expensive resources and take 100 citizens away.',
     actionA: function() {
       this.population = this.population + 100;
+      this.money = this.money + 1000;
       this.opponent.population = this.opponent.population - 100;
       this.opponent.bills = this.opponent.bills + 1000;
     },
     headline2: 'Invest in Military Research',
-    description2: 'Permanently increase the damage of all troops by increasing multiplier by 5.',
+    description2: 'Permanently increase the damage of all troops by increasing multiplier by 5, and discover new way to reduce your opponents military effectiveness.',
     actionB: function() {
-      this.damageMultiplier = this.damageMultiplier + 5;
+      this.damageMultiplier = this.damageMultiplier + 10;
+      this.opponent.damageMultiplier = this.opponent.damageMultiplier - 10;
     }
   },
   {
-    headline1: 'Build world bank',
-    description1: 'Get automatic 2000 gold and permanent increase in gold per turn by reducing divider. Bills opponent for 2000 gold.',
+    headline1: 'Sanctions!',
+    description1: 'Sanction your opponent and charge him interest be reducing his gold per turn and sticking him with a 2000 bill. Get an automatic 2000 and make more gold per turn.',
     actionA: function() {
       this.money = this.money + 2000;
       this.moneyDivider = this.moneyDivider - 2;
       this.opponent.bills = this.opponent.bills + 2000;
+      this.opponent.moneyDivider = this.opponent.moneyDivider + 2;
     },
-    headline2: 'Steal Opponents jets',
-    description2: 'Steal 20 of your opponents jets, taking the unit that does the most damage away from your opponent and add it to your total jets increasing your total unit damage significantly.',
+    headline2: 'Steal Military Base',
+    description2: 'Sneak up on your opponent and steal half of his fighter jets and frigates.',
     actionB: function() {
-      this.jetFighters = this.jetFighters + 20;
-      this.opponent.jetFighters = this.opponent.jetFighters - 20;
+      var fighterJets = this.opponent.fighterJets /2;
+      var frigates = this.opponent.frigates / 2;
+
+      this.jetFighters = this.jetFighters + fighterJets;
+      this.frigates = this.frigates + frigates;
+
+      this.opponent.jetFighters = fighterJets;
+      this.opponent.frigates = frigates;
     }
   }
 ];
