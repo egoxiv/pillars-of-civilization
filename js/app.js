@@ -99,5 +99,16 @@ var nextTurn = function(player1, player2) {
 
 };
 
-var getWinner = function(player1Total, player2Total) {
-};
+// var getWinner = function(player1Total, player2Total) {
+//   if()
+// };
+
+
+
+
+
+
+
+
+
+

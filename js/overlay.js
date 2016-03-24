@@ -1,5 +1,5 @@
 var overlay = function(index, player) {
-  var $overlay     = $('<div id=\'overlay\'></div>');
+  var $overlay     = $('<div id="overlay"></div>');
   var $empire      = $('<h1>' + player.empire + '</h1>');
   var headline1    = $('<h3>' + decisions[index].headline1 + '</h3>');
   var description1 = $('<p>' + decisions[index].description1 + '</p>');
@@ -18,7 +18,7 @@ var overlay = function(index, player) {
   $overlay.append(description2);
   $overlay.append($button2);
 
-  $( "body" ).append( $overlay );
+  $('body').append($overlay);
 
   $button1.text(decisions[index].headline1);
   $button1.on('click', function() {
@@ -35,5 +35,4 @@ var overlay = function(index, player) {
   });
 
   $overlay.show();
-
 };
