@@ -7,6 +7,7 @@ var turn = 0;
 var startGame = function() {
   $startButton.hide();
 
+  // Keeping dead code here so I can use later to store player names
   // player1Name = prompt('Player 1 enter your first name');
   // player2Name = prompt('Player 2 enter your first name');
 
@@ -23,6 +24,7 @@ var startGame = function() {
 };
 
 var nextTurn = function(player1, player2) {
+
   var $turnStatus = $('.turn-status');
 
   turn++;
@@ -83,15 +85,16 @@ var nextTurn = function(player1, player2) {
       getContext(counter, Player1, Player2);
       break;
     case 15:
-      var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
-      var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
-      if(p1FinalTotal > p2FinalTotal) {
-        window.alert(Player1.empire + ': ' + p1FinalTotal + '\n' + Player2.empire + ': ' + p2FinalTotal);
-        window.alert('Player 1 Wins!');
-      } else {
-        window.alert(Player2.empire + ': ' + p2FinalTotal + '\n' + Player1.empire + ': ' + p1FinalTotal);
-        window.alert('Player 2 Wins!');
-      }
+      // var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
+      // var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
+      // if(p1FinalTotal > p2FinalTotal) {
+      //   window.alert(Player1.empire + ': ' + p1FinalTotal + '\n' + Player2.empire + ': ' + p2FinalTotal);
+      //   window.alert('Player 1 Wins!');
+      // } else {
+      //   window.alert(Player2.empire + ': ' + p2FinalTotal + '\n' + Player1.empire + ': ' + p1FinalTotal);
+      //   window.alert('Player 2 Wins!');
+      // }
+      getWinner(Player1, Player2);
       break;
     case 16:
       window.alert('Game is over!');
@@ -105,9 +108,47 @@ var nextTurn = function(player1, player2) {
 
 };
 
-// var getWinner = function(player1Total, player2Total) {
-//   if()
-// };
+var getWinner = function(player1, player2) {
+  // Stores total money, totalUnits, and totalUnitDamage
+  var p1Total = ( player1.money + player1.totalUnits() + player2.totalUnitDamage() ) - player1.bills;
+  var p2Total = ( player2.money + player2.totalUnits() + player2.totalUnitDamage() ) - player2.bills;
+
+  // Gets player bills
+  var p1Bills = player1.bills;
+  var p2Bills = player2.bills;
+
+  // Checks for unpaid bills, if true, player gets 15% penalty subtracted from total
+  if(p1Bills > 0) {
+    var p1StartTotal = p1Total;
+    var p1Penalty = p1Total * parseFloat(0.15);
+    p1Total = Math.floor( p1Total - p1Penalty );
+    console.log(player1.empire + ' has been charged 15% of ' + p1StartTotal + ' for unpaid bills bringing your total score to ' + p1Total);
+    p1Bills = 0;
+  } else {
+    console.log(player1.empire + ' has no bills! No 15% charge');
+  }
+
+  if(p2Bills > 0) {
+    var p2StartTotal = p2Total;
+    var p2Penalty = p2Total * parseFloat(0.15);
+    p2Total = Math.floor( p1Total - p2Penalty );
+    console.log(player2.empire + ' has been charged 15% of ' + p2StartTotal + ' for unpaid bills bringing your total score to ' + p2Total);
+    p2Bills = 0;
+  } else {
+    console.log(player2.empire + ' has no bills! No 15% charge');
+  }
+
+  if(p1Total > p2Total) {
+    window.alert(player1.empire + ' total score: ' + p1Total +
+      '\n' + player2.empire + ' total score: ' + p2Total);
+    window.alert(player1.empire + ' wins!');
+  } else {
+    window.alert(player2.empire + ' total score: ' + p2Total +
+      '\n' + player1.empire + ' total score: ' + p1Total);
+    window.alert(player2.empire + ' wins!');
+  }
+
+};
 
 
 
