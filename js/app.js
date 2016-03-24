@@ -1,8 +1,8 @@
+var $startButton = $('.start-button');
 var player1Name;
 var player2Name;
-var counter      = 0; // counter for decisions array
-var turn         = 0;
-var $startButton = $('.start-button');
+var counter = 0;
+var turn = 0;
 
 var startGame = function() {
   $startButton.hide();
@@ -24,18 +24,19 @@ var startGame = function() {
 
 var nextTurn = function(player1, player2) {
   var $turnStatus = $('.turn-status');
+
   turn++;
   $turnStatus.text(turn);
 
-  // Updates dashboard
+  // Gets player dashboard
   var p1Dashboard = $('.player-1');
   var p2Dashboard = $ ('.player-2');
 
-  // Player 1 dashboard
+  // Sets player 1 dashboard
   p1Dashboard.children('.money').text(Player1.money);
   p1Dashboard.children('.military').text( Player1.totalUnits() );
 
-  // Player 2 dashboard
+  // Sets player 2 dashboard
   p2Dashboard.children('.money').text(Player2.money);
   p2Dashboard.children('.military').text( Player2.totalUnits() );
 
@@ -63,32 +64,28 @@ var nextTurn = function(player1, player2) {
 
   if( turn === 3 ) {
     window.alert('First decision!');
-    // overlay( counter );
     getContext(counter, Player1, Player2);
   } else if( turn === 6 ) {
     window.alert('Second decision!');
     counter++;
-    // overlay( counter );
     getContext(counter, Player1, Player2);
   } else if ( turn === 9 ) {
     window.alert('Third decision!');
     counter++;
-    // overlay( counter );
     getContext(counter, Player1, Player2);
   } else if ( turn === 12 ) {
     window.alert('Last decision!');
     counter++;
-    // overlay( counter );
     getContext(counter, Player1, Player2);
   } else if(turn === 15) {
     var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
     var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
     if(p1FinalTotal > p2FinalTotal) {
-      console.log('Player 1: ' + p1FinalTotal);
-      window.alert(Player1.empire + ' wins!');
+      window.alert(Player1.empire + ': ' + p1FinalTotal + '\n' + Player2.empire + ': ' + p2FinalTotal);
+      window.alert('Player 1 Wins!');
     } else {
-      console.log('Player 2: ' + p2FinalTotal);
-      window.alert(Player2.empire + ' wins!');
+      window.alert(Player2.empire + ': ' + p2FinalTotal + '\n' + Player1.empire + ': ' + p1FinalTotal);
+      window.alert('Player 2 Wins!');
     }
   } else if( turn > 15 ) {
     window.alert('Game is over!');
@@ -100,4 +97,7 @@ var nextTurn = function(player1, player2) {
   Player2.money += Player2.moneyPerTurn();
   Player1.money += Player1.moneyPerTurn();
 
+};
+
+var getWinner = function(player1Total, player2Total) {
 };

@@ -1,6 +1,7 @@
 /*******************
 Base
 *******************/
+
 * {
   box-sizing: border-box;
 }
@@ -134,14 +135,6 @@ Dashboard
   padding-top: 20px;
 }
 
-.money {
-  color: gold;
-}
-
-.military {
-  color: red;
-}
-
 
 
 /*******************
@@ -197,10 +190,6 @@ Buttons
   font-size: 1.7em;
 }
 
-.buy-units {
-  margin: 0 70px 0;
-}
-
 
 
 /*******************
@@ -251,7 +240,6 @@ Overlay
   position: absolute;
   top:0;
   left:0;
-  /*text-align: center;*/
   color: #ecf0f1;
 }
 
@@ -265,8 +253,3 @@ Overlay
   text-align: right;
   width: 40%;
 }
-
-
-
-
-

@@ -23,9 +23,6 @@ var overlay = function(index, player) {
   $button1.text(decisions[index].headline1);
   $button1.on('click', function() {
     player.choice = decisions[index].actionA;
-    // BUG when we invoke player.choice()
-    // can't read property population of undefined.
-    // undefined SHOULD be the opponent
     player.choice();
     $overlay.hide();
   });
