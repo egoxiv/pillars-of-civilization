@@ -2,14 +2,14 @@
 var Player1 = {
   empire: 'American Empire',
   money: 10000,
-  population: 1500,
-  soldiers: 75,
-  tanks: 75,
+  population: 1000,
+  soldiers: 100,
+  tanks: 100,
   frigates: 50,
   jetFighters: 50,
   bills: 0,
-  damageMultiplier: 20,
-  moneyDivider: 5,
+  damageMultiplier: 35,
+  moneyDivider: 7,
   moneyPerTurn: function() {
     var total = Math.floor(this.population / this.moneyDivider);
     return total;
@@ -29,15 +29,15 @@ var Player1 = {
 // Military Focused
 var Player2 = {
   empire: 'British Empire',
-  money: 5000,
+  money: 8000,
   population: 1000,
   soldiers: 150,
   tanks: 150,
   frigates: 100,
   jetFighters: 100,
   bills: 0,
-  damageMultiplier: 35,
-  moneyDivider: 10,
+  damageMultiplier: 40,
+  moneyDivider: 9,
   moneyPerTurn: function() {
     var total = Math.floor(this.population / this.moneyDivider);
     return total;
