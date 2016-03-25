@@ -7,11 +7,10 @@ var decisions = [
       this.opponent.population = this.opponent.population - 200;
     },
     headline2: 'Steal Tanks!',
-    description2: 'You have people inside your opponents military that can steal your opponents tanks without being noticed! This decision will take 25% of your opponents tanks and park them in your military bases. Your opponents military will be overall weaker and smaller with this decision.',
+    description2: 'You have people inside your opponents military that can steal your opponents tanks without being noticed! This decision will take 30 of your opponents tanks and park them in your military bases. Your opponents military will be overall weaker and smaller with this decision.',
     actionB: function() {
-      var twentyFivePercent = this.opponent.tanks * parseFloat( 0.25 );
-      this.tanks = Math.floor( this.tanks + twentyFivePercent );
-      this.opponent.tanks = Math.floor( this.opponent.tanks - twentyFivePercent );
+      this.tanks = this.tanks + 30;
+      this.opponent.tanks = this.opponent.tanks - 30;
     }
   },
   {
@@ -50,15 +49,18 @@ var decisions = [
     headline1: 'Build the World Bank!',
     description1: 'This decision will pay off all of your bills (if any), give you 2000 gold and increase your gold per turn. Your bank will force the opponent to pay your bills and reduce his gold per turn.',
     actionA: function() {
+
+
+
       var playerBills = this.bills;
-      this.bills = 0;
       this.money = this.money + 2000;
       this.moneyDivider = this.moneyDivider - 2;
       this.opponent.bills = this.opponent.bills + playerBills;
       this.opponent.moneyDivider = this.opponent.moneyDivider + 2;
+      this.bills = 0;
     },
-    headline2: 'Declare war first!',
-    description2: 'Your opponent will not see you coming which will allow you to steal half of his fighter jets and battleships to add to your total inventory!', // too powerful?
+    headline2: 'Declare war!',
+    description2: 'Your opponent will not see you coming which will allow you to steal half of the opponents fighter jets and battleships to add to your total inventory!', // too powerful?
     actionB: function() {
       var fighterJets = this.opponent.jetFighters /2;
       var frigates = this.opponent.frigates / 2;
