@@ -28,7 +28,7 @@ After the first few turns, you will be able to make your first decision. You def
 #### Decision #3
 ***Extract Natural Resources*** - Start extracting and selling you empires abundant natural resources and sell them to the world! Take 100 of your opponents people by creating jobs and bill him 1500 gold for your expensive resources.
 
-***Invest in Military Research*** - Replace all of your outdated military tech with all the new fancy stuff to increase your military\'s overall damage. Your opponents military will be less effective against you and reduce overall damage.
+***Invest in Military Research*** - Replace all of your outdated military tech with all the new fancy stuff to increase your military's overall damage. Your opponents military will be less effective against you and reduce overall damage.
 
 #### Decision #4
 ***Build world bank*** - This decision will pay off all of your bills (if any), give you 2000 gold and increase your gold per turn. Your bank will force the opponent to pay your bills and reduce his gold per turn.
@@ -36,6 +36,6 @@ After the first few turns, you will be able to make your first decision. You def
 ***Steal Opponents jets and battleships*** - Your opponent will not see you coming which will allow you to steal half of the opponents fighter jets and battleships to add to your total inventory!
 
 ## How to Win 
-Each players gold, total units, and total unit damage will be added and subtract any bills, if a player has unpaid bills, that player will get a 15% penalty subtracted from the total score. 
+Each players total gold, total units, and total unit damage will be added and subtract any bills, if a player has unpaid bills, that player will get a 15% penalty subtracted from the total score. 
 
 The player with the higher score at the end of 15 rounds wins! 
