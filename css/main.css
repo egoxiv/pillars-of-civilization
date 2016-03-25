@@ -183,11 +183,57 @@ Buttons
 
 .next-turn,
 .start-button {
-  width: 200px;
-  height: 40px;
+  width: 150px;
+  height: 30px;
   display: block;
   margin: 10px auto;
-  font-size: 1.7em;
+  border-radius: 10px;
+  font-size: 1.2em;
+  background-color: white;
+}
+
+.get-instructions {
+  width: 150px;
+  height: 30px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  float: left;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+}
+
+.how-to-play {
+  text-align: center;
+  display: none;
+}
+
+
+
+/*******************
+Instructions
+*******************/
+
+.instructions{
+  list-style: none;
+  background-color: #ecf0f1;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 30px;
+}
+
+.how-to-play h1,
+.how-to-play p {
+  color: #ecf0f1;
+}
+
+.instructions h1 {
+  /*margin: 0;*/
+  padding: 0;
+  color: black;
 }
 
 

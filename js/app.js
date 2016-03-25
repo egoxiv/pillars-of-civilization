@@ -1,6 +1,11 @@
 var counter = 0;
 var turn    = 0;
 
+var showInstructions = function() {
+    $('.how-to-play').toggle();
+    $('.container').toggle();
+};
+
 var setDashboardData = function() {
   // Gets player dashboard
   var p1Dashboard = $('.player-1');
