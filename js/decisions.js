@@ -1,7 +1,7 @@
 var decisions = [
   {
     headline1: 'Build a University',
-    description1: 'People from all over the world move to your empire to get an education at your new university. This decision will increase your total population by 200, which means you will make more gold per turn. Your opponent will lose 200 people and cash per turn.',
+    description1: 'People from all over the world move to your empire to get an education at your new university. This decision will increase your total population by 200, which means you will make more gold per turn. Your opponent will lose 200 people and gold per turn.',
     actionA: function() {
       this.population = this.population + 200;
       this.opponent.population = this.opponent.population - 200;
@@ -9,8 +9,9 @@ var decisions = [
     headline2: 'Steal Tanks!',
     description2: 'You have people inside your opponents military that can steal your opponents tanks without being noticed! This decision will take 25% of your opponents tanks and park them in your military bases. Your opponents military will be overall weaker and smaller with this decision.',
     actionB: function() {
-      this.tanks = this.tanks + 20;
-      this.opponent.tanks = this.opponent.tanks - 20;
+      var twentyFivePercent = this.opponent.tanks * parseFloat( 0.25 );
+      this.tanks = Math.floor( this.tanks + twentyFivePercent );
+      this.opponent.tanks = Math.floor( this.opponent.tanks - twentyFivePercent );
     }
   },
   {
@@ -22,7 +23,7 @@ var decisions = [
       this.opponent.money = this.opponent.money - 1000;
     },
     headline2: 'Take your opponents soldiers!',
-    description2: 'Your opponents soldiers are unhappy and are ready to leave the military to join yours. With this decision, you will have 50 more soldiers at the expense of your opponent, and your opponent will be billed for 1000.',
+    description2: 'Your opponents soldiers are unhappy and are ready to leave the military to join yours. With this decision, you will have 50 more soldiers at the expense of your opponent, and your opponent will be billed for 1000 gold.',
     actionB: function() {
       this.soldiers = this.soldiers + 50;
       this.opponent.soldiers = this.opponent.soldiers - 50;
@@ -31,7 +32,7 @@ var decisions = [
   },
   {
     headline1: 'Extract Natural Resources',
-    description1: 'Start extracting and selling you empires abundant natural resources and sell them to the world! Take 100 of your opponents people by creating jobs and bill him 1000 gold for your expensive resources.',
+    description1: 'Start extracting and selling you empires abundant natural resources and sell them to the world! Take 100 of your opponents people by creating jobs and bill him 1500 gold for your expensive resources.',
     actionA: function() {
       this.population = this.population + 100;
       this.money = this.money + 1500;
