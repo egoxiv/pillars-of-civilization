@@ -1,35 +1,7 @@
-var $startButton = $('.start-button');
-var player1Name;
-var player2Name;
 var counter = 0;
-var turn = 0;
+var turn    = 0;
 
-var startGame = function() {
-  $startButton.hide();
-
-  // Keeping dead code here so I can use later to store player names
-  // player1Name = prompt('Player 1 enter your first name');
-  // player2Name = prompt('Player 2 enter your first name');
-
-  player1Name = 'America';
-  player2Name = 'Britain';
-
-  $('.player-1 .player').text(player1Name);
-  $('.player-2 .player').text(player2Name);
-
-  // Adds click event to NEXT button after game starts
-  $('.next-turn').on('click', function() {
-    nextTurn(player1Name, player2Name);
-  });
-};
-
-var nextTurn = function(player1, player2) {
-
-  var $turnStatus = $('.turn-status');
-
-  turn++;
-  $turnStatus.text(turn);
-
+var setDashboardData = function() {
   // Gets player dashboard
   var p1Dashboard = $('.player-1');
   var p2Dashboard = $ ('.player-2');
@@ -41,7 +13,10 @@ var nextTurn = function(player1, player2) {
   // Sets player 2 dashboard
   p2Dashboard.children('.money').text(Player2.money);
   p2Dashboard.children('.military').text( Player2.totalUnits() );
+};
 
+var setInventoryData = function() {
+  setDashboardData();
   // Player 1 data setters
   $('.player1-assets #empire').text( Player1.empire );
   $('.player1-assets #money').text( Player1.money );
@@ -63,6 +38,30 @@ var nextTurn = function(player1, player2) {
   $('.player2-assets #jets').text( Player2.jetFighters );
   $('.player2-assets #cashPerTurn').text( Player2.moneyPerTurn() );
   $('.player2-assets #bill').text( Player2.bills );
+};
+
+var startGame = function() {
+  $('.start-button').hide();
+
+  var player1Name = prompt('Player 1 enter your first name');
+  var player2Name = prompt('Player 2 enter your first name');
+
+  $('.player-1 .player').text(player1Name);
+  $('.player-2 .player').text(player2Name);
+
+  // Adds click event to NEXT button after game starts
+  $('.next-turn').on('click', function() {
+    nextTurn(player1Name, player2Name);
+  });
+};
+
+var nextTurn = function(player1, player2) {
+  var $turnStatus = $('.turn-status');
+
+  turn++;
+  $turnStatus.text(turn);
+
+  setInventoryData();
 
   switch (turn) {
     case 3:
@@ -85,15 +84,6 @@ var nextTurn = function(player1, player2) {
       getContext(counter, Player1, Player2);
       break;
     case 15:
-      // var p1FinalTotal = Player1.totalUnitDamage() + Player1.money;
-      // var p2FinalTotal = Player2.totalUnitDamage() + Player2.money;
-      // if(p1FinalTotal > p2FinalTotal) {
-      //   window.alert(Player1.empire + ': ' + p1FinalTotal + '\n' + Player2.empire + ': ' + p2FinalTotal);
-      //   window.alert('Player 1 Wins!');
-      // } else {
-      //   window.alert(Player2.empire + ': ' + p2FinalTotal + '\n' + Player1.empire + ': ' + p1FinalTotal);
-      //   window.alert('Player 2 Wins!');
-      // }
       getWinner(Player1, Player2);
       break;
     case 16:
