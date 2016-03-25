@@ -7,7 +7,7 @@ You start by selecting the path you want to take your civilization down. Your ch
 ##Paths
 
 #### Military
-The military path will give your civilization a strong military. Your units do more damage and you will start off with double the units.
+The military path will give your civilization a strong military. Your units do more damage and you will start off with extra the units.
 
 #### Economic
 The Economic path will generate more gold for your civilization. You will make more gold per turn and start off with double the gold. 
@@ -16,29 +16,26 @@ The Economic path will generate more gold for your civilization. You will make m
 After the first few turns, you will be able to make your first decision. You defeat your opponenet by making better decisions. 
 
 #### Decision #1
-***Invest In Education*** - This decision will take your opponents population from the empire (200 citizens) and move them to your empire (all 200) for 5 turns.
+***Build a University*** - People from all over the world move to your empire to get an education at your new university. This decision will increase your total population by 200, which means you will make more gold per turn. Your opponent will lose 200 people and gold per turn.
 
-***Steal Opponent's Tanks*** - Or you can choose to take away your opponents tanks and add them to your inventory, reducing your opponents total unit damage and increasing yours.
+***Steal Opponent's Tanks*** - You have people inside your opponents military that can steal your opponents tanks without being noticed! This decision will take 30 of your opponents tanks and park them in your military bases. Your opponents military will be overall weaker and smaller with this decision.
 
 #### Decision #2
-***Build Roads*** - Create jobs and take away your opponents citizens! This decision will increase your gold per turn for five turns, add 100 citizens to your total population and take 500 gold away from your opponents total cash and deposit it into your total cash.
+***Build Roads*** - People are moving to your sprawling empire because there are so many jobs, more people means more cash per turn! This decision will take 300 people away from your opponent and decrease his cash per turn.
 
-***Recruit opponent's soldiers*** - Take 50 of your opponents soldiers and add them to your total soldier count, which will increase your total unit damage and reduce your opponents. Your opponent will be billed for the deserters for 500 gold.
+***Recruit opponent's soldiers*** - Your opponents soldiers are unhappy and are ready to leave the military to join yours. With this decision, you will have 50 more soldiers at the expense of your opponent, and your opponent will be billed for 1000 gold.
 
 #### Decision #3
-***Extract Natural Resources*** - Make more gold per turn temporarily by adding 100 citizens, bill your opponent 1000 gold for expensive resources and take 100 citizens away.
+***Extract Natural Resources*** - Start extracting and selling you empires abundant natural resources and sell them to the world! Take 100 of your opponents people by creating jobs and bill him 1500 gold for your expensive resources.
 
-***Invest in Military Research*** - Permanently increase the damage of all troops by increasing multiplier by 2.
+***Invest in Military Research*** - Replace all of your outdated military tech with all the new fancy stuff to increase your military\'s overall damage. Your opponents military will be less effective against you and reduce overall damage.
 
 #### Decision #4
-***Build world bank*** - Get automatic 2000 gold and permanent increase in gold per turn by reducing divider. Bills opponent for 2000 gold. 
+***Build world bank*** - This decision will pay off all of your bills (if any), give you 2000 gold and increase your gold per turn. Your bank will force the opponent to pay your bills and reduce his gold per turn.
 
-***Steal Opponents jets*** - Steal 20 of your opponents jets, taking the unit that does the most damage away from your opponent and add it to your total jets increasing your total unit damage significantly.
+***Steal Opponents jets and battleships*** - Your opponent will not see you coming which will allow you to steal half of the opponents fighter jets and battleships to add to your total inventory!
 
 ## How to Win 
-The player with a higher total of money and military wins.
+Each players gold, total units, and total unit damage will be added and subtract any bills, if a player has unpaid bills, that player will get a 15% penalty subtracted from the total score. 
 
-***If the Military civilization wins*** - The military civilization will nuke his opponent and rule the world
-
-***If the Economy civilization wins*** - The economy civilization will buy his opponent and rule the world
-
+The player with the higher score at the end of 15 rounds wins! 
