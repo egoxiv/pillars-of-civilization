@@ -49,9 +49,6 @@ var decisions = [
     headline1: 'Build the World Bank!',
     description1: 'This decision will pay off all of your bills (if any), give you 2000 gold and increase your gold per turn. Your bank will force the opponent to pay your bills and reduce his gold per turn.',
     actionA: function() {
-
-
-
       var playerBills = this.bills;
       this.money = this.money + 2000;
       this.moneyDivider = this.moneyDivider - 2;
@@ -60,16 +57,16 @@ var decisions = [
       this.bills = 0;
     },
     headline2: 'Declare war!',
-    description2: 'Your opponent will not see you coming which will allow you to steal half of the opponents fighter jets and battleships to add to your total inventory!', // too powerful?
+    description2: 'Your opponent will not see you coming which will allow you to steal half of the opponents fighter jets and battleships to add to your total inventory!',
     actionB: function() {
       var fighterJets = this.opponent.jetFighters /2;
       var frigates = this.opponent.frigates / 2;
 
-      this.jetFighters = this.jetFighters + fighterJets;
-      this.frigates = this.frigates + frigates;
+      this.jetFighters = Math.floor( this.jetFighters + fighterJets) ;
+      this.frigates = Math.floor( this.frigates + frigates );
 
-      this.opponent.jetFighters = fighterJets;
-      this.opponent.frigates = frigates;
+      this.opponent.jetFighters = Math.floor( fighterJets );
+      this.opponent.frigates = Math.floor( frigates );
     }
   }
 ];

@@ -139,13 +139,3 @@ var getWinner = function(player1, player2) {
   }
 
 };
-
-
-
-
-
-
-
-
-
-
