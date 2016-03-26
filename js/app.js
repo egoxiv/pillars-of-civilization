@@ -1,3 +1,5 @@
+//Your code looks great, it's very easy to read and understand.  The only thing I would suggest is it looks like there isn't an ending.  I can keep hitting next turn and the game will continue but there aren't anymore decisions.  You may want to add a rest function to your ending notification to start the game over.
+//If you want to add some features you could have players pick their countries in the beginning and add more countries to choose from so more players can play at once.  You can always continue to expand too, add more decisions so the game continues.
 var counter = 0;
 var turn    = 0;
 
