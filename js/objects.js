@@ -1,6 +1,6 @@
 // Economy Focused
 var Player1 = {
-  empire: 'American',
+  empire: 'America',
   money: 10000,
   population: 1000,
   soldiers: 100,
