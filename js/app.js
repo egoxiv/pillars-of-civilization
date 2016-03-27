@@ -126,7 +126,7 @@ var getWinner = function(player1, player2) {
   if(p2Bills > 0) {
     var p2StartTotal = p2Total;
     var p2Penalty = p2Total * parseFloat(0.15);
-    p2Total = Math.floor( p1Total - p2Penalty );
+    p2Total = Math.floor( p2Total - p2Penalty );
     console.log(player2.empire + ' has been charged 15% of ' + p2StartTotal + ' for unpaid bills bringing your total score to ' + p2Total);
     p2Bills = 0;
   } else {
