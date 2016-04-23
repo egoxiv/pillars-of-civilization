@@ -3,69 +3,72 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
     <title>Pillars of Civilization</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
-    <a href="./instructions.html">Instructions</a>
-    <h1 class="game-title">Pillars of Civilization</h1>
-    <div class="turn-status"></div>
-    <!-- <button class="get-instructions" onclick="showInstructions()">Instructions</button> -->
+  <div class="container">
+      <a class="btn btn-primary" href="./instructions.html">Instructions</a>
+      <h1 class="game-title">Pillars of Civilization</h1>
+      <div class="turn-status"></div>
+      <!-- <button class="get-instructions" onclick="showInstructions()">Instructions</button> -->
 
-    <div class="container">
-      <div class="player-assets">
-        <ul class="player1-assets">
-          <li class="asset-item"><b><span id="empire"></span></b></li>
-          <li class="asset-item">Gold: <span id="money"></span></li>
-          <li class="asset-item">Population: <span id="population"></span></li>
-          <li class="asset-item">Soldiers: <span id="soldiers"></span></li>
-          <li class="asset-item">Tanks: <span id="tanks"></span></li>
-          <li class="asset-item">Frigates: <span id="frigates"></span></li>
-          <li class="asset-item">Jets: <span id="jets"></span></li>
-          <li class="asset-item">Cash per turn: <span id="cashPerTurn"></span></li>
-          <li class="asset-item">Bills: <span id="bill"></span></li>
-        </ul>
+      <div class="container">
+        <div class="player-assets">
+          <ul class="player1-assets">
+            <li class="asset-item"><b><span id="empire"></span></b></li>
+            <li class="asset-item">Gold: <span id="money"></span></li>
+            <li class="asset-item">Population: <span id="population"></span></li>
+            <li class="asset-item">Soldiers: <span id="soldiers"></span></li>
+            <li class="asset-item">Tanks: <span id="tanks"></span></li>
+            <li class="asset-item">Frigates: <span id="frigates"></span></li>
+            <li class="asset-item">Jets: <span id="jets"></span></li>
+            <li class="asset-item">Cash per turn: <span id="cashPerTurn"></span></li>
+            <li class="asset-item">Bills: <span id="bill"></span></li>
+          </ul>
+        </div>
+
+        <div class="board">
+          <div class="dashboard player-1">
+            <span class="player">P1</span>
+            <span class="money stats gold"></span>
+            <span class="military stats red"></span>
+          </div>
+
+          <div class="capital capital-1">
+            <img src="images/american.png" alt="American Flag">
+          </div>
+
+          <div class="capital capital-2">
+            <img src="images/british.png" alt="British Flag">
+          </div>
+
+          <div class="dashboard player-2">
+            <span class="player">P2</span>
+            <span class="money stats gold"></span>
+            <span class="military stats red"></span>
+            <span class="clearfix"></span>
+          </div>
+        </div>
+
+        <div class="player-assets">
+          <ul class="player2-assets">
+            <li class="asset-item"><b><span id="empire"></span></b></li>
+            <li class="asset-item">Gold: <span id="money"></span></li>
+            <li class="asset-item">Population: <span id="population"></span></li>
+            <li class="asset-item">Soldiers: <span id="soldiers"></span></li>
+            <li class="asset-item">Tanks: <span id="tanks"></span></li>
+            <li class="asset-item">Frigates: <span id="frigates"></span></li>
+            <li class="asset-item">Jets: <span id="jets"></span></li>
+            <li class="asset-item">Cash per turn: <span id="cashPerTurn"></span></li>
+            <li class="asset-item">Bills: <span id="bill"></span></li>
+          </ul>
+        </div>
+
+        <button class="start-button" onclick="startGame()">Start Game</button>
+        <button class="next-turn btn btn-primary">Next turn</button>
       </div>
-
-      <div class="board">
-        <div class="dashboard player-1">
-          <span class="player">P1</span>
-          <span class="money stats gold"></span>
-          <span class="military stats red"></span>
-        </div>
-
-        <div class="capital capital-1">
-          <img src="images/american.png" alt="American Flag">
-        </div>
-
-        <div class="capital capital-2">
-          <img src="images/british.png" alt="British Flag">
-        </div>
-
-        <div class="dashboard player-2">
-          <span class="player">P2</span>
-          <span class="money stats gold"></span>
-          <span class="military stats red"></span>
-          <span class="clearfix"></span>
-        </div>
-      </div>
-
-      <div class="player-assets">
-        <ul class="player2-assets">
-          <li class="asset-item"><b><span id="empire"></span></b></li>
-          <li class="asset-item">Gold: <span id="money"></span></li>
-          <li class="asset-item">Population: <span id="population"></span></li>
-          <li class="asset-item">Soldiers: <span id="soldiers"></span></li>
-          <li class="asset-item">Tanks: <span id="tanks"></span></li>
-          <li class="asset-item">Frigates: <span id="frigates"></span></li>
-          <li class="asset-item">Jets: <span id="jets"></span></li>
-          <li class="asset-item">Cash per turn: <span id="cashPerTurn"></span></li>
-          <li class="asset-item">Bills: <span id="bill"></span></li>
-        </ul>
-      </div>
-
-      <button class="start-button" onclick="startGame()">Start Game</button>
-      <button class="next-turn">Next turn</button>
     </div>
 
     <script src="js/jquery-1.12.2.min.js"></script>
