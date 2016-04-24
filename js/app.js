@@ -10,7 +10,6 @@ $(function(){
   $('#start-button').on('click', function() {
     startGame();
   });
-
 }());
 
 var startGame = function() {
@@ -28,25 +27,15 @@ var startGame = function() {
 };
 
 var setInventoryData = function() {
-  // Player 1 data setters
-  $('.p1-asset-item #money').text( Player1.money );
-  $('.p1-asset-item #population').text( Player1.population );
-  $('.p1-asset-item #soldiers').text( Player1.soldiers );
-  $('.p1-asset-item #tanks').text( Player1.tanks );
-  $('.p1-p1-asset-item #frigates').text( Player1.frigates );
-  $('.p1-asset-item #jets').text( Player1.jetFighters );
-  $('.p1-asset-item #cashPerTurn').text( Player1.moneyPerTurn() );
-  $('.p1-asset-item #bill').text( Player1.bills );
+  var assets = ['money', 'population', 'soldiers', 'tanks', 'frigates', 'jetFighters', 'bills'];
 
-  // Player 2 data setters
-  $('.p2-asset-item #money').text( Player2.money );
-  $('.p2-asset-item #population').text( Player2.population );
-  $('.p2-asset-item #soldiers').text( Player2.soldiers );
-  $('.p2-asset-item #tanks').text( Player2.tanks );
-  $('.p2-asset-item #frigates').text( Player2.frigates );
-  $('.p2-asset-item #jets').text( Player2.jetFighters );
-  $('.p2-asset-item #cashPerTurn').text( Player2.moneyPerTurn() );
-  $('.p2-asset-item #bill').text( Player2.bills );
+  $('.p1-asset-item #moneyPerTurn').text( Player1.moneyPerTurn() );
+  $('.p2-asset-item #moneyPerTurn').text( Player2.moneyPerTurn() );
+
+  for(var i = 0; i < assets.length; i++) {
+    $('.p1-asset-item #' + assets[i]).text(Player1[assets[i]]);
+    $('.p2-asset-item #' + assets[i]).text(Player2[assets[i]]);
+  }
 };
 
 var nextTurn = function(player1, player2) {
