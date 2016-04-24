@@ -2,29 +2,43 @@
 Base
 *******************/
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background-color: #34495e;
+  height: 100%;
+  width: 100%;
+}
+
+#main-game {
+  display: block;
 }
 
 
 
 /*******************
-Colors
+BUTTONS
 *******************/
 
-.red {
-  color: red;
+.controls {
+  padding: 0;
+  margin: 0;
 }
 
-.gold {
-  color: gold;
+.controls a {
+  display: inline-block;
+  color: #ecf0f1;
+  height: 100%;
+  width: 100%;
+}
+
+.controls a:hover {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.controls .btn:hover {
+  border: none;
 }
 
 
@@ -33,24 +47,12 @@ Colors
 Title
 *******************/
 
-.game-title {
+.title {
   font-size: 3em;
-  margin: 0;
   padding: 0;
-  text-align: center;
+  margin: 0 0 10px;
   color: #ecf0f1;
-}
-
-
-
-/*******************
-Board Container
-*******************/
-
-.container {
-  min-width: 100%;
-  min-height: 100%;
-  margin-top: 50px;
+  display: inline-block;
 }
 
 
@@ -60,153 +62,30 @@ Board
 *******************/
 
 .turn-status {
+  display: inline-block;
   width: 50px;
   height: 50px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
   color: #ecf0f1;
-  font-size: 1.5em;
+  font-size: 2em;
+  padding-top: 5px;
 }
 
 .board {
-  margin: 0 auto;
-  max-width: 60%;
-  min-height: 400px;
-  position: relative;
+  margin: 5px auto;
+  min-width: 100%;
+  padding: 5px;
+  min-height: 100%;
   background-color: #bdc3c7;
   color: #34495e;
+  border-radius: 5px;
 }
 
-
-
-/*******************
-Dashboard
-*******************/
-
-.dashboard:nth-child(odd) {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 50%;
-  height: 75px;
-  border-radius: 0 0 20px 0;
-  background-color: white;
-}
-
-.dashboard:nth-child(even) {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  width: 50%;
-  height: 75px;
-  border-radius: 20px 0 0 0;
-  background-color: white;
-  text-align: right;
-}
-
-.stats {
-  font-size: 1.5em;
-}
-
-.player {
-  font-size: 3.2em;
-}
-
-.player-1 .player {
-  margin-left: 5px;
-}
-
-.player-2 .player {
-  float: right;
-  margin-left: 30px;
-  margin-right: 5px;
-}
-
-.player-1 .stats {
-  margin-left: 15px;
-  display: inline-block;
-  padding-top: 20px;
-}
-
-.player-2 .stats {
-  margin-right: 15px;
-  display: inline-block;
-  padding-top: 20px;
-}
-
-
-
-/*******************
-Capitals
-*******************/
-
-.capital {
-  position: absolute;
-  min-height: 100px;
-  min-width: 100px;
-  bottom: 30%;
-}
-
-.capital img {
-  height: 150px;
-}
-
-.capital-1 {
-  left: 100px;
-}
-
-.capital-2 {
-  right: 100px;
-}
-
-
-
-/*******************
-Clearfix
-*******************/
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-
-
-
-/*******************
-Buttons
-*******************/
-
-.next-turn,
-.start-button {
-  width: 150px;
+.flag {
   height: 30px;
-  display: block;
-  margin: 10px auto;
-  border-radius: 10px;
-  font-size: 1.2em;
-  background-color: white;
 }
 
-.get-instructions {
-  width: 150px;
-  height: 30px;
-  font-size: 1.2em;
-  border-radius: 10px;
-  float: left;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: white;
-}
-
-.how-to-play {
-  text-align: center;
-  display: none;
+.player-name {
+  font-size: 2em;
 }
 
 
@@ -215,25 +94,33 @@ Buttons
 Instructions
 *******************/
 
-.instructions{
-  list-style: none;
-  background-color: #ecf0f1;
-  max-width: 70%;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  line-height: 30px;
+.instructions {
+  display: none;
 }
 
-.how-to-play h1,
-.how-to-play p {
+.instructions a {
+  font-size: 1.2em;
+}
+
+.instructions ul,
+.instructions p,
+.instructions a {
   color: #ecf0f1;
 }
 
-.instructions h1 {
-  /*margin: 0;*/
-  padding: 0;
-  color: black;
+.how-to-play h1 {
+  margin-top: 30px;
+  text-decoration: underline;
+}
+
+.how-to-play li,
+.how-to-play p {
+  font-size: 1.1em;
+}
+
+.how-to-play li {
+  margin: 10px auto;
+  list-style: none;
 }
 
 
@@ -244,31 +131,15 @@ Asset
 
 .player-assets ul {
   padding: 10px;
-  width: 180px;
+  width: 100%;
   list-style: none;
   background-color: #bdc3c7;
-  border-radius: 15px;
-  border: 3px solid white;
+  color: #34495e;
+  border-radius: 5px;
 }
 
-.player1-assets {
-  position: absolute;
-  display: inline-block;
-  float: left;
-  left: 5px;
-  top: 25%;
-}
-
-.player2-assets {
-  position: absolute;
-  display: inline-block;
-  float: right;
-  right: 5px;
-  top: 25%;
-}
-
-b {
-  font-size: 20px;
+.players {
+  border-left: 1px solid white;
 }
 
 
@@ -287,15 +158,4 @@ Overlay
   top:0;
   left:0;
   color: #ecf0f1;
-}
-
-#left-div {
-  text-align: left;
-  width: 40%;
-  border: 1px solid black;
-}
-
-#right-div {
-  text-align: right;
-  width: 40%;
 }

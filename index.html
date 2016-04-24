@@ -3,86 +3,104 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pillars of Civilization</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.6-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Pillars of Civilization</title>
   </head>
   <body>
-    <h1 class="game-title">Pillars of Civilization</h1>
-    <div class="turn-status"></div>
-    <button class="get-instructions" onclick="showInstructions()">Instructions</button>
-
-    <div class="how-to-play">
-      <ul class="instructions">
-        <h1>How to play</h1>
-        <li>PoC is a two player game, both players will start by entering their names.</li>
-        <li>After both player have entered their names, click next turn to get all of your money and military units</li>
-        <li>By default, Player 1 is America and Player 2 is Britain</li>
-        <li>Every 3 turns, you get to make a decision that will impact your gameplay.</li>
-        <li>The decisions are either military or economy
-         focused. There are no wrong decisions, you simply want to make the best one based on your strategy and your opponents.</li>
-        <li>Keep an eye on your military and gold because you will need as much as possible to win the game at the end of 15 turns. The more military units you have, the more damage you will do to your opponent.</li>
-        <li>Be careful with bills, they will be subtract from your final total plus an additional 15% if they are unpaid at the end of 15 turns.</li>
-      </ul>
-      <h1>How to win</h1>
-      <p>Your total gold, military units, and total damage of your combined military units will be added up and the player with the higher total wins.</p>
-    </div>
-
     <div class="container">
-      <div class="player-assets">
-        <ul class="player1-assets">
-          <li class="asset-item"><b><span id="empire"></span></b></li>
-          <li class="asset-item">Gold: <span id="money"></span></li>
-          <li class="asset-item">Population: <span id="population"></span></li>
-          <li class="asset-item">Soldiers: <span id="soldiers"></span></li>
-          <li class="asset-item">Tanks: <span id="tanks"></span></li>
-          <li class="asset-item">Frigates: <span id="frigates"></span></li>
-          <li class="asset-item">Jets: <span id="jets"></span></li>
-          <li class="asset-item">Cash per turn: <span id="cashPerTurn"></span></li>
-          <li class="asset-item">Bills: <span id="bill"></span></li>
-        </ul>
+      <div id="main-game">
+        <div class="row">
+          <h1 class="title col-md-10 col-xs-10">Pillars of Civilization</h1>
+          <div class="turn-status pull-right col-md-2 col-xs-2"></div>
+        </div>
+        <div class="row">
+          <ul class="btn-group btn-group-justified controls" role="group" aria-label="...">
+            <li class="btn btn-primary active show-instructions"><a>Instructions</a></li>
+            <li class="btn btn-primary active" id="start-button"><a>Start Game</a></li>
+          </ul>
+        </div>
+
+        <div class="board row">
+            <div class="col-xs-6 col-md-6">
+              <div class="row">
+                <div class="col-xs-6 col-md-6 player-name" id="player1-name"></div>
+                <div class="col-xs-6 col-md-6">
+                  <img class="flag pull-right" src="images/american.svg" alt="American Flag">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-xs-12 player-assets">
+                  <ul class="assets-list">
+                    <!-- <li class="asset-item"><span id="empire"></span></li> -->
+                    <li class="p1-asset-item">Gold: <span id="money"></span></li>
+                    <li class="p1-asset-item">Population: <span id="population"></span></li>
+                    <li class="p1-asset-item">Soldiers: <span id="soldiers"></span></li>
+                    <li class="p1-asset-item">Tanks: <span id="tanks"></span></li>
+                    <li class="p1-asset-item">Frigates: <span id="frigates"></span></li>
+                    <li class="p1-asset-item">Jets: <span id="jetFighters"></span></li>
+                    <li class="p1-asset-item">Bills: <span id="bills"></span></li>
+                    <li class="p1-asset-item">Gold per turn: <span id="moneyPerTurn"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-6 players">
+              <div class="row">
+                <div class="col-xs-6 col-md-6 player-name" id="player2-name"></div>
+                <div class="col-xs-6 col-md-6">
+                  <img class="flag pull-right" src="images/uk.svg.png" alt="American Flag">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-xs-12 player-assets">
+                  <ul class="assets-list">
+                    <!-- <li class="asset-item"><span id="empire"></span></li> -->
+                    <li class="p2-asset-item">Gold: <span id="money"></span></li>
+                    <li class="p2-asset-item">Population: <span id="population"></span></li>
+                    <li class="p2-asset-item">Soldiers: <span id="soldiers"></span></li>
+                    <li class="p2-asset-item">Tanks: <span id="tanks"></span></li>
+                    <li class="p2-asset-item">Frigates: <span id="frigates"></span></li>
+                    <li class="p2-asset-item">Jets: <span id="jetFighters"></span></li>
+                    <li class="p2-asset-item">Bills: <span id="bills"></span></li>
+                    <li class="p2-asset-item">Gold per turn: <span id="moneyPerTurn"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          <ul class="btn-group btn-group-justified controls" role="group" aria-label="...">
+            <li class="btn btn-success active" id="next-turn"><a>Next turn</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="board">
-        <div class="dashboard player-1">
-          <span class="player">P1</span>
-          <span class="money stats gold"></span>
-          <span class="military stats red"></span>
-        </div>
-
-        <div class="capital capital-1">
-          <img src="images/american.png" alt="American Flag">
-        </div>
-
-        <div class="capital capital-2">
-          <img src="images/british.png" alt="British Flag">
-        </div>
-
-        <div class="dashboard player-2">
-          <span class="player">P2</span>
-          <span class="money stats gold"></span>
-          <span class="military stats red"></span>
-          <span class="clearfix"></span>
+      <!-- Instructions -->
+      <div class="instructions">
+        <a class="pull-right show-instructions">Return to game</a>
+        <div class="how-to-play">
+          <h1 class="title">How to play</h1>
+          <div class="row">
+            <ul>
+              <li>PoC is a two player game, both players will start by entering their names.</li>
+              <li>After both player have entered their names, click next turn to get all of your money and military units</li>
+              <li>By default, Player 1 is America and Player 2 is Britain</li>
+              <li>Every 3 turns, you get to make a decision that will impact your gameplay.</li>
+              <li>The decisions are either military or economy
+               focused. There are no wrong decisions, you simply want to make the best one based on your strategy and your opponents.</li>
+              <li>Keep an eye on your military and gold because you will need as much as possible to win the game at the end of 15 turns. The more military units you have, the more damage you will do to your opponent.</li>
+              <li>Be careful with bills, they will be subtract from your final total plus an additional 15% if they are unpaid at the end of 15 turns.</li>
+            </ul>
+            <h1 class="title">How to win</h1>
+            <ul>
+              <li>Your total gold, military units, and total damage of your combined military units will be added up and the player with the higher total wins.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="player-assets">
-        <ul class="player2-assets">
-          <li class="asset-item"><b><span id="empire"></span></b></li>
-          <li class="asset-item">Gold: <span id="money"></span></li>
-          <li class="asset-item">Population: <span id="population"></span></li>
-          <li class="asset-item">Soldiers: <span id="soldiers"></span></li>
-          <li class="asset-item">Tanks: <span id="tanks"></span></li>
-          <li class="asset-item">Frigates: <span id="frigates"></span></li>
-          <li class="asset-item">Jets: <span id="jets"></span></li>
-          <li class="asset-item">Cash per turn: <span id="cashPerTurn"></span></li>
-          <li class="asset-item">Bills: <span id="bill"></span></li>
-        </ul>
-      </div>
-
-      <button class="start-button" onclick="startGame()">Start Game</button>
-      <button class="next-turn">Next turn</button>
     </div>
-
     <script src="js/jquery-1.12.2.min.js"></script>
     <script type="text/javascript" src="js/objects.js"></script>
     <script type="text/javascript" src="js/decisions.js"></script>
