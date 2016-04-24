@@ -1,63 +1,51 @@
-var counter = 0;
-var turn    = 0;
+var counter   = 0;
+var turn      = 0;
 
-var showInstructions = function() {
-    $('.how-to-play').toggle();
-    $('.container').toggle();
-};
-
-var setDashboardData = function() {
-  // Gets player dashboard
-  var p1Dashboard = $('.player-1');
-  var p2Dashboard = $ ('.player-2');
-
-  // Sets player 1 dashboard
-  p1Dashboard.children('.money').text(Player1.money);
-  p1Dashboard.children('.military').text( Player1.totalUnits() );
-
-  // Sets player 2 dashboard
-  p2Dashboard.children('.money').text(Player2.money);
-  p2Dashboard.children('.military').text( Player2.totalUnits() );
-};
-
-var setInventoryData = function() {
-  setDashboardData();
-  // Player 1 data setters
-  $('.player1-assets #empire').text( Player1.empire );
-  $('.player1-assets #money').text( Player1.money );
-  $('.player1-assets #population').text( Player1.population );
-  $('.player1-assets #soldiers').text( Player1.soldiers );
-  $('.player1-assets #tanks').text( Player1.tanks );
-  $('.player1-assets #frigates').text( Player1.frigates );
-  $('.player1-assets #jets').text( Player1.jetFighters );
-  $('.player1-assets #cashPerTurn').text( Player1.moneyPerTurn() );
-  $('.player1-assets #bill').text( Player1.bills );
-
-  // Player 2 data setters
-  $('.player2-assets #empire').text( Player2.empire );
-  $('.player2-assets #money').text( Player2.money );
-  $('.player2-assets #population').text( Player2.population );
-  $('.player2-assets #soldiers').text( Player2.soldiers );
-  $('.player2-assets #tanks').text( Player2.tanks );
-  $('.player2-assets #frigates').text( Player2.frigates );
-  $('.player2-assets #jets').text( Player2.jetFighters );
-  $('.player2-assets #cashPerTurn').text( Player2.moneyPerTurn() );
-  $('.player2-assets #bill').text( Player2.bills );
-};
+$(function(){
+  $('.show-instructions').on('click', function() {
+    $('.instructions').toggle();
+    $('#main-game').toggle();
+  });
+}());
 
 var startGame = function() {
-  $('.start-button').hide();
+  $('#start-button').hide();
 
-  var player1Name = prompt('Player 1 enter your first name');
-  var player2Name = prompt('Player 2 enter your first name');
+  Player1.name = prompt('Player 1 enter your first name');
+  Player2.name = prompt('Player 2 enter your first name');
 
-  $('.player-1 .player').text(player1Name);
-  $('.player-2 .player').text(player2Name);
+  $('#player1-name').text(Player1.name);
+  $('#player2-name').text(Player2.name);
 
-  // Adds click event to NEXT button after game starts
-  $('.next-turn').on('click', function() {
-    nextTurn(player1Name, player2Name);
+  $('#next-turn').on('click', function() {
+    nextTurn(Player1.name, Player2.name);
   });
+};
+
+$('#start-button').on('click', function() {
+  startGame();
+});
+
+var setInventoryData = function() {
+  // Player 1 data setters
+  $('.p1-asset-item #money').text( Player1.money );
+  $('.p1-asset-item #population').text( Player1.population );
+  $('.p1-asset-item #soldiers').text( Player1.soldiers );
+  $('.p1-asset-item #tanks').text( Player1.tanks );
+  $('.p1-p1-asset-item #frigates').text( Player1.frigates );
+  $('.p1-asset-item #jets').text( Player1.jetFighters );
+  $('.p1-asset-item #cashPerTurn').text( Player1.moneyPerTurn() );
+  $('.p1-asset-item #bill').text( Player1.bills );
+
+  // Player 2 data setters
+  $('.p2-asset-item #money').text( Player2.money );
+  $('.p2-asset-item #population').text( Player2.population );
+  $('.p2-asset-item #soldiers').text( Player2.soldiers );
+  $('.p2-asset-item #tanks').text( Player2.tanks );
+  $('.p2-asset-item #frigates').text( Player2.frigates );
+  $('.p2-asset-item #jets').text( Player2.jetFighters );
+  $('.p2-asset-item #cashPerTurn').text( Player2.moneyPerTurn() );
+  $('.p2-asset-item #bill').text( Player2.bills );
 };
 
 var nextTurn = function(player1, player2) {
@@ -71,22 +59,30 @@ var nextTurn = function(player1, player2) {
   switch (turn) {
     case 3:
       window.alert('First decision!');
+      $('.btn-group').hide();
       getContext(counter, Player1, Player2);
+      decisionCount = 0;
       break;
     case 6:
       counter++;
       window.alert('Second decision!');
+      $('.btn-group').hide();
       getContext(counter, Player1, Player2);
+      decisionCount = 0;
       break;
     case 9:
       counter++;
       window.alert('Third decision!');
+      $('.btn-group').hide();
       getContext(counter, Player1, Player2);
+      decisionCount = 0;
       break;
     case 12:
-      window.alert('Last decision!');
       counter++;
+      window.alert('Last decision!');
+      $('.btn-group').hide();
       getContext(counter, Player1, Player2);
+      decisionCount = 0;
       break;
     case 15:
       getWinner(Player1, Player2);
@@ -117,30 +113,30 @@ var getWinner = function(player1, player2) {
     var p1StartTotal = p1Total;
     var p1Penalty = p1Total * parseFloat(0.15);
     p1Total = Math.floor( p1Total - p1Penalty );
-    console.log(player1.empire + ' has been charged 15% of ' + p1StartTotal + ' for unpaid bills bringing your total score to ' + p1Total);
+    console.log(player1.name + ' has been charged 15% of ' + p1StartTotal + ' for unpaid bills bringing your total score to ' + p1Total);
     p1Bills = 0;
   } else {
-    console.log(player1.empire + ' has no bills! No 15% charge');
+    console.log(player1.name + ' has no bills! No 15% charge');
   }
 
   if(p2Bills > 0) {
     var p2StartTotal = p2Total;
     var p2Penalty = p2Total * parseFloat(0.15);
     p2Total = Math.floor( p1Total - p2Penalty );
-    console.log(player2.empire + ' has been charged 15% of ' + p2StartTotal + ' for unpaid bills bringing your total score to ' + p2Total);
+    console.log(player2.name + ' has been charged 15% of ' + p2StartTotal + ' for unpaid bills bringing your total score to ' + p2Total);
     p2Bills = 0;
   } else {
-    console.log(player2.empire + ' has no bills! No 15% charge');
+    console.log(player2.name + ' has no bills! No 15% charge');
   }
 
   if(p1Total > p2Total) {
-    window.alert(player1.empire + ' total score: ' + p1Total +
-      '\n' + player2.empire + ' total score: ' + p2Total);
-    window.alert(player1.empire + ' wins!');
+    window.alert(player1.name + ' total score: ' + p1Total +
+      '\n' + player2.name + ' total score: ' + p2Total);
+    window.alert(player1.name + ' wins!');
   } else {
-    window.alert(player2.empire + ' total score: ' + p2Total +
-      '\n' + player1.empire + ' total score: ' + p1Total);
-    window.alert(player2.empire + ' wins!');
+    window.alert(player2.name + ' total score: ' + p2Total +
+      '\n' + player1.name + ' total score: ' + p1Total);
+    window.alert(player2.name + ' wins!');
   }
 
 };

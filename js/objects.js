@@ -1,6 +1,6 @@
 // Economy Focused
 var Player1 = {
-  empire: 'America',
+  name: null,
   money: 10000,
   population: 1000,
   soldiers: 100,
@@ -28,7 +28,7 @@ var Player1 = {
 
 // Military Focused
 var Player2 = {
-  empire: 'British Empire',
+  name: null,
   money: 8000,
   population: 1000,
   soldiers: 150,
