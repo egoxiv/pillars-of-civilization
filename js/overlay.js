@@ -1,5 +1,5 @@
 var decisionCount = 0;
-// **** BUG - btn-group not hiding when overlay is appended
+// **** BUG - btn-group not hiding when overlay is appended.
 // **** FIX - btn-group display set to none with .hide() before overlay is appended. btn-group is set to .show() after decisionCount reaches 2.
 
 var overlay = function(index, player) {
