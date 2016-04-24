@@ -6,6 +6,11 @@ $(function(){
     $('.instructions').toggle();
     $('#main-game').toggle();
   });
+
+  $('#start-button').on('click', function() {
+    startGame();
+  });
+
 }());
 
 var startGame = function() {
@@ -21,10 +26,6 @@ var startGame = function() {
     nextTurn(Player1.name, Player2.name);
   });
 };
-
-$('#start-button').on('click', function() {
-  startGame();
-});
 
 var setInventoryData = function() {
   // Player 1 data setters
