@@ -90,7 +90,7 @@ var nextTurn = function(player1, player2) {
 };
 
 var getWinner = function(player1, player2) {
-  // Stores total money, totalUnits, and totalUnitDamage
+  // Sets total money, totalUnits, and totalUnitDamage
   var p1Total = ( player1.money + player1.totalUnits() + player2.totalUnitDamage() ) - player1.bills;
   var p2Total = ( player2.money + player2.totalUnits() + player2.totalUnitDamage() ) - player2.bills;
 

@@ -1,8 +1,8 @@
 var decisionCount = 0;
-// **** bug in btn-group not hiding when overlay is appended, btn-group is hidden before the overlay is appended and showed when decision count reaches 2. Temporary solution
+// **** BUG - btn-group not hiding when overlay is appended
+// **** FIX - btn-group display set to none with .hide() before overlay is appended. btn-group is set to .show() after decisionCount reaches 2.
 
 var overlay = function(index, player) {
-
   var $overlay     = $('<div id="overlay"></div>');
   var $name      = $('<h1>' + player.name + '</h1>');
   var headline1    = $('<h3>' + decisions[index].headline1 + '</h3>');
@@ -30,7 +30,6 @@ var overlay = function(index, player) {
     player.choice();
     $overlay.hide();
     decisionCount++;
-    console.log('In button1' + decisionCount);
     if(decisionCount === 2) {
       $('.btn-group').show();
     }
@@ -42,7 +41,6 @@ var overlay = function(index, player) {
     player.choice();
     $overlay.hide();
     decisionCount++;
-    console.log('In button1' + decisionCount);
     if(decisionCount === 2) {
       $('.btn-group').show();
     }
